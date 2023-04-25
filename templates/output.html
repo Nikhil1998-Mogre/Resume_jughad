@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume</title>
+</head>
+<body>
+	{% comment %} <h1>Resume</h1>
+	<p>Name : {{ resume_data.Name }}</p>
+	<p>Skills : {{ resume_data.Skill }}</p>
+	<p>Location : {{ resume_data.Location }}</p>
+	<p>Email address : {{ resume_data.Email_address }}</p>
+	<p>Companies worked at : {{ resume_data.Companies_worked_at }}</p>
+	<p>Degree : {{ resume_data.Degree }}</p>
+	<p>Graduation year : {{ resume_data.Graduation_year }}</p>
+	<p>Designation : {{ resume_data.Designation }}</p>
+	<p>Phone : {{ resume_data.Phone }}</p>
+	<p>College : {{ resume_data.College }}</p>
+	<p>Year of experience : {{ resume_data.Year_of_experience }}</p> {% endcomment %}
+
+<h1>Extracted Resume Data</h1>
+
+<ul>
+  {% for item in resume_data %}
+    <l>{{ item }}{% if not forloop.last %}, {% endif %}</l>
+  {% endfor %}
+</ul>
+
+<ul>
+  {% for item in jd_skill %}
+    <l>{{ item }}{% if not forloop.last %}, {% endif %}</l>
+  {% endfor %}
+</ul>
+<ul>
+<div>
+    Matching words: {{ dic_all.matching_words }}
+</div>
+<div>
+    Non-matching words: {{ dic_all.non_matching_words }}
+</div>
+<div>
+    Score: {{ dic_all.score }}
+</div>
+
+</ul>
+
+</body>
+</html>

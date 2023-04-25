@@ -1,0 +1,39 @@
+{% comment %} <!DOCTYPE html>
+<html>
+  <head>
+    <title>Resume Upload</title>
+  </head>
+  <body>
+    <h1>Upload Your Resume</h1> {% endcomment %}
+    {% comment %} ## no action provided so it will HTTP method to use is POST, and the action 
+    attribute is not provided, which means that the form data will be sent to the current URL. 
+     i.e  submitting the form will trigger a POST request to the base URL, causing the index() function to be called.{% endcomment %}
+    {% comment %} <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="document">
+      <button type="submit">Upload</button> {% endcomment %}
+    {% comment %} <form method="post" action="{% url 'process_data' %}">
+      {% csrf_token %}
+      <label for="input_text">Enter Text:</label>
+      <input type="text" id="input_text" name="input_text">
+      <button type="submit">Submit</button>
+    </form> {% endcomment %}
+
+  {% comment %} </body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Files</title>
+</head>
+<body>
+	<h1>Upload PDF and Text files</h1>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<p>PDF File: <input type="file" name="pdf_file"></p>
+		<p>Text File (up to 500 words): <textarea name="text_file" rows="10" cols="50"></textarea></p>
+		<input type="submit" value="Upload">
+	</form>
+</body>
+</html
